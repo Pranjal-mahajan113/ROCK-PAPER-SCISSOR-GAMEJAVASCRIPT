@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #8cc461;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.score-board {
+  border: 2px solid rgb(220, 215, 215);
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  height: 158px;
+  color: white;
+}
+
+.game-title p {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.scores {
+  display: flex;
+  gap: 20px;
+}
+
+.score-box {
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 8px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.score-box p {
+  font-size: 15px;
+}
+.score-box h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* game options--------------------- */
+.game-area {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.choices {
+  position: relative;
+  width: 350px;
+  height: 300px;
+  /* background-color: aqua; */
+}
+.choice {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+}
+.inner {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  /* z-index: 3; */
+}
+.inner img {
+  height: 56px;
+  width: 80px;
+}
+
+.rock {
+  border: 20px solid #0074b6;
+  top: 0;
+  left: 0;
+}
+.scissor {
+  border: 20px solid #bd00ff;
+  top: 0;
+  right: 0;
+}
+.paper {
+  border: 20px solid #ffa943;
+  bottom: 0;
+  /* left: 110px; */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---------lines style------------------------------------- */
+.line-left,
+.line-right {
+  transform-origin: top center;
+}
+
+.lines {
+  position: absolute;
+  width: 350px;
+  height: 260px;
+  z-index: 1;
+  /* background-color: aqua; */
+}
+.line {
+  position: absolute;
+  background-color: #000000;
+  /* width: 133px; */
+}
+.line-top {
+  width: 170px;
+  height: 10px;
+  top: 45px;
+  left: 80px;
+}
+.line-left {
+  width: 10px;
+  height: 170px;
+  left: 45px;
+  top: 55px;
+  transform: rotate(-35deg);
+}
+.line-right {
+  width: 10px;
+  height: 170px;
+  right: 45px;
+  top: 55px;
+  transform: rotate(35deg);
+}
