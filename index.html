@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -39,12 +39,12 @@
           </div>
           <div class="choice rock">
             <div class="inner">
-              <img src="/assets/stone.png" alt="ROCK" />
+              <img src="./assets/rock.png" alt="ROCK" />
             </div>
           </div>
           <div class="choice scissor">
             <div class="inner">
-              <img src="/assets/scissor.png" alt="SCISSOR" />
+              <img src="./assets/scissor.png" alt="SCISSOR" />
             </div>
           </div>
           <div class="choice paper">
@@ -54,8 +54,50 @@
           </div>
         </div>
       </div>
+
+      <div class="result-screen hidden">
+        <div class="result-box">
+          <p>YOU PICKED</p>
+          <div id="user-pick" class="choice">
+            <div class="inner">
+              <img id="user-img" src="" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="result-middle">
+          <h1 id="result-msg"></h1>
+          <button class="play-again hidden">PLAY AGAIN</button>
+        </div>
+
+        <div class="result-box">
+          <p>PC PICKED</p>
+          <div id="computer-pick" class="choice">
+            <div class="inner">
+              <img id="computer-img" src="" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hurray-screen hidden">
+        <div class="star-wrapper">
+          <img src="./assets/Bigstar.png" class="big-star left-big" alt="" />
+          <img src="./assets/Bigstar.png" class="big-star right-big" alt="" />
+
+          <img src="./assets/Smallstar.png" class="small-star star1" alt="" />
+          <img src="./assets/Smallstar.png" class="small-star star2" alt="" />
+          <img src="./assets/Smallstar.png" class="small-star star3" alt="" />
+        </div>
+
+        <img src="./assets/win.png" class="trophy" alt="" />
+        <h1>HURRAY!!</h1>
+        <p>YOU WON THE GAME</p>
+        <button class="play-again hidden">PLAY AGAIN</button>
+      </div>
     </div>
     <!-- RULES POPUP -->
+
     <div class="rules-popup">
       <div class="rules-box">
         <div class="rules-header">
@@ -89,6 +131,8 @@
     </div>
     <!-- Rules Button -->
     <button class="rules-btn">RULES</button>
+    <button id="next-btn" class="hidden">NEXT</button>
+
     <script src="/Js/app.js"></script>
   </body>
 </html>

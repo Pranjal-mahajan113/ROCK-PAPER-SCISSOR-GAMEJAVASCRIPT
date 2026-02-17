@@ -6,6 +6,7 @@
 
 body {
   background-color: #8cc461;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -216,7 +217,8 @@ body {
   flex-shrink: 0;
 }
 
-.rules-btn {
+.rules-btn,
+#next-btn {
   position: fixed;
   bottom: 10px;
   right: 30px;
@@ -229,6 +231,207 @@ body {
   cursor: pointer;
   font-size: 20px;
 }
+
+.rules-btn {
+  right: 40px;
+}
+
+#next-btn {
+  right: 190px; /* Rules ke left side */
+}
+
 .rules-btn:hover {
   background-color: rgb(144, 103, 50);
+}
+
+.result-screen {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* color: white; */
+  width: 700px;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  color: white;
+}
+
+.result-box p {
+  position: relative;
+  z-index: 20;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.result-screen .choice {
+  position: static;
+  width: 130px;
+  height: 130px;
+}
+
+.result-middle {
+  text-align: center;
+}
+
+/* .result-middle h1 {
+  font-size: 35px;
+  margin-bottom: 15px;
+} */
+
+#result-msg {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  line-height: 1.2;
+}
+
+.main-result {
+  display: block;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.sub-result {
+  display: block;
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+/* Animation */
+
+/* Winner effect */
+.choice.winner {
+  position: relative;
+  z-index: 5;
+}
+
+/* 3 Green Rings */
+.choice.winner::before,
+.choice.winner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* First ring */
+.choice.winner::before {
+  width: 150px;
+  height: 150px;
+  background: #3b6720;
+}
+
+/* Second ring */
+.choice.winner::after {
+  width: 200px;
+  height: 200px;
+  background: #1da82b;
+}
+
+/* Third ring using extra span */
+.choice.winner span.ring3 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #2e9a25;
+  border-radius: 50%;
+  z-index: -2;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+/* user win screen css */
+.hurray-screen {
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  color: white;
+}
+.hurray-screen h1 {
+  font-size: 60px;
+  font-weight: 600;
+}
+.hurray-screen p {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.trophy {
+  width: 180px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.star-wrapper {
+  position: relative;
+}
+
+.big-star {
+  position: absolute;
+  width: 130px;
+  z-index: 1;
+}
+
+.left-big {
+  left: 320px;
+  top: 40px;
+}
+
+.right-big {
+  right: 320px;
+  top: 40px;
+}
+
+.small-star {
+  position: absolute;
+  width: 50px;
+  z-index: 1;
+}
+
+.star1 {
+  left: 250px;
+  top: 10px;
+}
+
+.star2 {
+  right: 420px;
+  top: 10px;
+}
+
+.play-again {
+  padding: 15px 30px;
+  border: 2px solid white;
+  background-color: white;
+  color: gray;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 15px;
 }
