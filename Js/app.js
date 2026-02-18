@@ -1,8 +1,6 @@
-// 1️⃣ RULES BUTTON
 const rulesbtn = document.querySelector(".rules-btn");
 const rulesPopup = document.querySelector(".rules-popup");
 const closebtn = document.querySelector(".close-btn");
-
 const gameArea = document.querySelector(".game-area");
 const resultScreen = document.querySelector(".result-screen");
 const resultMsg = document.getElementById("result-msg");
@@ -24,14 +22,14 @@ closebtn.addEventListener("click", () => {
   rulesPopup.style.display = "none";
 });
 
-// 2️⃣ VARIABLES (IMPORTANT - ABOVE CLICK)
+// VARIABLES 
 let userScore = 0;
 let computerScore = 0;
 
 const userScoreEl = document.getElementById("user-score");
 const computerScoreEl = document.getElementById("computer-score");
 
-// 🔥 Load saved score from localStorage
+//  Load saved score from localStorage
 userScore = localStorage.getItem("userScore")
   ? parseInt(localStorage.getItem("userScore"))
   : 0;
@@ -44,14 +42,14 @@ computerScore = localStorage.getItem("computerScore")
 userScoreEl.textContent = userScore;
 computerScoreEl.textContent = computerScore;
 
-// 3️⃣ COMPUTER CHOICE FUNCTION
+// COMPUTER CHOICE FUNCTION
 function getComputerChoice() {
   const options = ["rock", "paper", "scissor"];
   const randomIndex = Math.floor(Math.random() * 3);
   return options[randomIndex];
 }
 
-// 4️⃣ RESULT FUNCTION
+//  RESULT FUNCTION
 function getResult(user, computer) {
   if (user === computer) return "tie";
 
@@ -66,7 +64,7 @@ function getResult(user, computer) {
   }
 }
 
-// 5️⃣ MAIN GAME LOGIC
+//  MAIN GAME LOGIC
 const choices = document.querySelectorAll(".game-area .choice");
 
 choices.forEach((choice) => {
@@ -86,7 +84,7 @@ choices.forEach((choice) => {
       localStorage.setItem("computerScore", computerScore);
     }
 
-    // 🔥 SCREEN SWITCH YAHAN HOGA
+    //  SCREEN SWITCH YAHAN HOGA
     gameArea.classList.add("hidden");
     resultScreen.classList.remove("hidden");
 
@@ -112,6 +110,8 @@ choices.forEach((choice) => {
     } else {
       resultMsg.innerHTML = `
     <span class="main-result">TIE UP</span>
+    <span class="sub-result">&nbsp;</span>
+
   `;
     }
 
@@ -121,17 +121,17 @@ choices.forEach((choice) => {
 
       playAgainBtns.forEach((btn) => {
         btn.classList.add("hidden");
-      }); // 🔥 hide play again
+      }); // hide play again
     } else {
       nextBtn.classList.add("hidden");
       playAgainBtns.forEach((btn) => {
         btn.classList.remove("hidden");
       });
-      // 🔥 show play again
+      //  show play again
     }
 
     // ------Animation class-------
-    // 🔥 Remove old winner classes (important)
+    //  Remove old winner classes (important)
     userPick.classList.remove("winner");
     computerPick.classList.remove("winner");
 
