@@ -160,7 +160,7 @@ body {
 .rules-popup {
   position: fixed;
   inset: 0;
-  display: none; /* JS baad mein */
+  display: none; /* JS after */
   justify-content: flex-end;
   align-items: flex-end;
   padding: 90px 45px;
@@ -188,7 +188,6 @@ body {
   position: absolute;
   top: -20px;
   right: -20px;
-
   width: 45px;
   height: 45px;
   border: 4px solid white;

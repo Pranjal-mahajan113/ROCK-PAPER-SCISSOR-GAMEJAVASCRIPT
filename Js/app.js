@@ -22,7 +22,7 @@ closebtn.addEventListener("click", () => {
   rulesPopup.style.display = "none";
 });
 
-// VARIABLES 
+// VARIABLES
 let userScore = 0;
 let computerScore = 0;
 
@@ -152,10 +152,6 @@ choices.forEach((choice) => {
       ring.classList.add("ring3");
       computerPick.appendChild(ring);
     }
-
-    console.log("User:", userChoice);
-    console.log("Computer:", computerChoice);
-    console.log("Result:", result);
   });
 });
 
